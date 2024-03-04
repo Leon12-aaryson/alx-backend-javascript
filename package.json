@@ -1,0 +1,29 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "node 0-main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leon12-aaryson/alx-backend-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leon12-aaryson/alx-backend-javascript/issues"
+  },
+  "homepage": "https://github.com/Leon12-aaryson/alx-backend-javascript#readme"
+}
