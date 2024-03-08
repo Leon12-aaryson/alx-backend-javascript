@@ -8,5 +8,5 @@ export function taskNext() {
   return task;
 }
 
-taskFirst()
-taskNext()
+taskFirst();
+taskNext();
