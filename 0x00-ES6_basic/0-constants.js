@@ -3,10 +3,13 @@ export function taskFirst() {
   return task;
 }
 
-export function taskNext() {
-  let task = 'But sometimes let is okay';
-  return task;
+export function getLast() {
+  return ' is okay';
 }
 
-taskFirst();
-taskNext();
+export function taskNext() {
+  let combination = 'But sometimes let';
+  combination += getLast();
+
+  return combination;
+}
