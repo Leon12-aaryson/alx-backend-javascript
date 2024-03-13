@@ -1,5 +1,5 @@
 export default class AirPort {
-  constructor (name, code) {
+  constructor(name, code) {
     if (typeof name === 'string') {
       this._name = name;
     }
@@ -8,7 +8,7 @@ export default class AirPort {
     }
   }
 
-  get [Symbol.toStringTag ]() {
+  get [Symbol.toStringTag]() {
     return `${this._code}`;
   }
 };

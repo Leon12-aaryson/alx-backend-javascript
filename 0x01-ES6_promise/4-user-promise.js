@@ -1,4 +1,4 @@
-export default function uploadPhoto (fileName) {
+export default function uploadPhoto(fileName) {
   return new Promise((resolve, reject) => {
     const isProcessed = Math.random() < 0.5;
 

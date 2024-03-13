@@ -1,4 +1,4 @@
-export default function cleanSet (set, startString) {
+export default function cleanSet(set, startString) {
   const newList = [];
   if (startString === '' || typeof startString !== 'string') {
     return '';
