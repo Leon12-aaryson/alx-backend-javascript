@@ -1,6 +1,6 @@
 import { uploadPhoto, createUser } from './utils';
 
-async function asyncUploadUser() {
+async function asyncUploadUser () {
   try {
     const photo = await uploadPhoto();
     const user = await createUser();
@@ -13,5 +13,5 @@ async function asyncUploadUser() {
 }
 
 asyncUploadUser().then((result) => {
-    console.log(result);
+  console.log(result);
 });

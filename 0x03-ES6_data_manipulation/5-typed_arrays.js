@@ -1,4 +1,4 @@
-export default function createInt8TypedArray(length, position, value) {
+export default function createInt8TypedArray (length, position, value) {
   if (position > length) {
     throw Error('Position outside range');
   }
@@ -6,4 +6,4 @@ export default function createInt8TypedArray(length, position, value) {
   const apiView = new DataView(bufferArray);
   apiView.setInt8(position, value);
   return apiView;
-};
+}

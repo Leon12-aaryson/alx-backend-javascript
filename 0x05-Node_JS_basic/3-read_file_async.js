@@ -1,41 +1,38 @@
-const fs = require('fs');
+const { readFile } = require('fs');
 
-function countStudents (path) {
+async function countStudents (path) {
+  try {
+    const students = {};
+    const fields = {};
+    let totalStudents = 0;
+
+    const data = await readFileAsync(path);
+    const lines = data.toString().split('\n').filter(Boolean);
+
+    lines.forEach(line => {
+      const [firstName, lastName, age, field] = line.split(',');
+      if (!students[field]) students[field] = [];
+      students[field].push(firstName);
+      fields[field] = (fields[field] || 0) + 1;
+      totalStudents++;
+    });
+
+    console.log(`Number of students: ${totalStudents}`);
+    for (const [field, count] of Object.entries(fields)) {
+      console.log(`Number of students in ${field}: ${count}. List: ${students[field].join(', ')}`);
+    }
+
+    return data;
+  } catch (error) {
+    throw new Error('Cannot load the database');
+  }
+}
+
+function readFileAsync (path) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8', (error, data) => {
-      if (error) {
-        reject(new Error('Cannot load the database'));
-        return;
-      }
-
-      const lines = data.trim().split('\n');
-      let mathCount = 0;
-      let CSCount = 0;
-      const fields = {};
-
-      for (const line of lines) {
-        const studentData = line.split(',');
-
-        if (studentData.length === 4) {
-          const [firstName, lastName, age, field] = studentData;
-
-          if (field === 'Math') {
-            mathCount++;
-            if (!fields.Math) fields.Math = [];
-            fields.Math.push(firstName);
-          } else if (field === 'CS') {
-            CSCount++;
-            if (!fields.CS) fields.CS = [];
-            fields.CS.push(firstName);
-          }
-        }
-      }
-
-      console.log(`Number of students: ${mathCount + CSCount}`);
-      console.log(`Number of students in Math: ${mathCount}. List: ${fields.Math.join(', ')}`);
-      console.log(`Number of students in CS: ${CSCount}. List: ${fields.CS.join(', ')}`);
-
-      resolve();
+    readFile(path, (error, data) => {
+      if (error) reject(error);
+      else resolve(data);
     });
   });
 }
