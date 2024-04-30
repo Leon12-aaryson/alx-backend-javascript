@@ -11,8 +11,7 @@ rl.question('Welcome to Holberton School, what is your name?\n', (input) => {
   rl.close();
 });
 
-rl.on("close", function () {
-  console.log("\nExiting the program, goodbye!");
+rl.on('close', function () {
+  console.log('\nExiting the program, goodbye!');
   process.exit(0);
 });
-
