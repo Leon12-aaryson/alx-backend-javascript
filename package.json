@@ -1,7 +1,7 @@
 {
   "name": "alx-backend-javascript",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a directory for javascript backend of ALX software program specializations",
   "type": "module",
   "main": "index.js",
   "dependencies": {
